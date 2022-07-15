@@ -6,6 +6,6 @@ E-commerce
 
 # Tools, Languages, and Resources
 
-• PHP, HTML, CSS, MySQL
+• PHP, HTML, CSS, MySQL <br/>
 • JS
 • AWS, LAMP, Lightsail
