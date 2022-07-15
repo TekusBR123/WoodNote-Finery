@@ -104,32 +104,7 @@ if (isset($_REQUEST['submit'])) {
 
                 </form>
             </div>
-            <?php
-            require_once "My-DB-Functions.php";
-            if (isset($_REQUEST['submit'])) {
-                // insert statement for user info
 
-                /*if (!empty($firstname) and !empty($lastname) and !empty($email) and !empty($password)) {
-                    header("location: homepage.php");
-                }*/
-
-                if ($_REQUEST['email'] !== $personInfo[2]) {
-                    //passwrd
-                    $mysql = "INSERT firstname, lastname, email, passwrd INTO
-                               VALUES('" . $firstname . ", '" . $lastname . "', " . $email . ", " . $password . "');";
-                    //TODO: Run
-                }
-
-            }
-
-            
-
-
-
-
-
-
-            ?>
         </div>
 
         <footer>
