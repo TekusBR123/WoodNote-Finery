@@ -10,8 +10,15 @@
 <!----Styles----->
 <style>
 @media only screen and (max-width: 425px) {
+
+    html,
     body {
-        background-color: beige;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-image: linear-gradient(gray, white, white);
     }
 
     .center {
@@ -21,7 +28,6 @@
     }
 
     .button {
-
         height: 30px;
         color: aliceblue;
         background-color: darkcyan;
@@ -42,9 +48,64 @@
         height: 100;
         background-color: burlywood;
     }
+
+    .input-field {
+        background-color: whitesmoke;
+        height: 40px;
+        border-radius: 40px;
+    }
+
+    .input-name {
+        color: black;
+        font-size: medium;
+        padding: 15px;
+    }
+
+    .user-icon {
+
+        width: 50px;
+        height: 50px;
+        background-color: beige;
+        border-radius: 100px;
+        transform: translate(180px);
+        box-shadow: 20px 10px 90px black;
+
+    }
+
+
+
+
+
+    /* input[type=submit] {
+        color: black;
+        font-size: medium;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: none;
+        background-color: white;
+    } */
+
+    .input-button {
+        box-shadow: 25px 20px 65px #86857E;
+
+
+    }
+
+    .overflow-scroll {
+        overflow-y: scroll;
+        position: relative;
+        flex: 1 0 auto;
+    }
 }
 </style>
-<?php
+
+<!-- contents container -->
+<div class="overflow-scroll">
+    <?php
+//components
+require_once "components/header.php";
+
 // TODO: Validate input function
 function validate_input($input)
 {  // Validate user input for better security
@@ -80,37 +141,86 @@ if (isset($_REQUEST['submit'])) {
 
 ?>
 
-<body>
+    <body>
 
-    <div class="center-form">
-        <!-- Company Logo -->
-        <img src="assets/woodnote_logo.png" height="270px">
-        <div class="center">
+        <div class="center-form">
 
-
+            <div class="user-icon center input-button">
+                <i class=" icons fa-solid fa-user"></i>
+            </div>
+            <!-- Company Logo -->
+            <!-- <img src="assets/woodnote_logo.png" height="270px"> -->
             <div class="center">
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
-                    FirstName:<input type="text" name="firstname" value="<?php echo $firstname; ?>">*
-                    <?php echo $nameMSG; ?><br /><br />
-                    LastName:<input type="text" name="lastname" value="<?php echo $lastname; ?>">*
-                    <?php echo $nameMSG;
-                    $_SESSION['lastname'] = $lastname; ?><br /><br />
-                    Email:<input type="text" name="email" value="<?php echo $email; ?>">*
-                    <?php echo $emailMSG;  ?><br /><br />
-                    Password:<input type="password" name="password" value="<?php echo $password; ?>">*
-                    <?php echo $passwordMSG;  ?><br /><br />
-                    <input type="submit" name="submit" value="submit" class="button">
 
-                </form>
+
+                <div class="center">
+
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+                        <div style="padding-top: 35px;">
+
+                            <div class="input-field center input-button">
+                                <div>
+                                    <span class="input-name">FirstName</span>
+                                    <input style="border-radius:60px;" type="text" name="firstname"
+                                        value="<?php echo $firstname; ?>" placeholder="FirstName">*
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding-top: 35px;">
+                            <div class="input-field center input-button">
+                                <div>
+                                    <span class="input-name">LastName</span>
+                                    <input style="border-radius:60px;" type="text" name="lastname"
+                                        value="<?php echo $firstname; ?>" placeholder="LastName">*
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding-top: 35px;">
+                            <div class="input-field center input-button">
+                                <div>
+                                    <span class="input-name">Email</span>
+                                    <input style="border-radius:60px;" type="text" name="email"
+                                        value="<?php echo $firstname; ?>" placeholder="Email">*
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding-top: 35px; padding-bottom: 20px">
+                            <div class="input-field center input-button">
+                                <div>
+                                    <span class="input-name">Password</span>
+                                    <input style="border-radius:60px;" type="password" name="password"
+                                        value="<?php echo $firstname; ?>" placeholder="Password">*
+                                </div>
+                            </div>
+                        </div>
+
+
+                        If you already have an account, click
+                        <a style="font-weight: bold;">here</a>
+                        <div style="padding-top: 35px;">
+                            <div class="input-field center input-button">
+                                <div class="submit-button"><input type="submit" name="submit" value="CREATE ACCOUNT">
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </form>
+                </div>
+
+
             </div>
 
         </div>
 
-        <footer>
 
-        </footer>
+    </body>
 
-</body>
+</div>
+
 
 </html>

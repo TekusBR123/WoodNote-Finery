@@ -7,7 +7,11 @@ E-commerce
 # Tools, Languages, and Resources
 
 • PHP, HTML, CSS, MySQL <br/>
-• JS <br/>
+• JS, AJAX <br/>
 • AWS, LAMP, Lightsail<br/>
 
 # FrameWorks
+
+# Libraries
+
+•Font Awesome<br/>
