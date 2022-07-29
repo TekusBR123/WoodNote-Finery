@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html lang="en">
 
 <head>
@@ -9,7 +10,7 @@
 
 
 <?php
-require_once "Private-Code/My-DB-Functions.php";
+require_once "PrivateCode/My-DB-Functions.php";
 //$conn = My_Connect_DB();
 require_once "components/header.php";
 require_once "components/navigation.php";
@@ -66,30 +67,57 @@ a {
     and save it for limited time in database
     
     */
+    //$conn = My_Connect_DB();
 
     ?>
 
+    <?php
+    //    $sql = "SELECT * FROM Products WHERE productID = ".$id.";";
+    //    $result = My_SQL_EXE($conn, $sql);
+    //    $row = mysqli_fetch_row($result);
+    $_SESSION['id'] = $_GET['productID'];
+    $_SESSION['price'] = $_GET['productPrice'];
+    $_SESSION['img'] = $_GET['productImg'];
+
+
+    echo "<a href='cart.php?productID=" . $_SESSION['id'] . "&productImg=" . $_SESSION['img'] . "'>";
+    ?>
     <table border="0">
+
         <tr class="add-to-cart">
             <td class="data-radius">
-                $24.99
+                <?php
+
+                echo "$" . $_SESSION['price']; ?>
                 <i class=" cart icons fa-solid fa-cart-shopping header-icons fa-user-color" style="color:white;"></i>
             </td>
 
         </tr>
 
-    </table>
 
-    <table border="0" class="header-position">
+    </table>
+    </a>
+
+    <table border="0" class="header-Position">
 
         <tr class="grand-parent">
             <td>
-                <img src="assets/women_white_sleeve.png" alt="" height="320" width="320" style="border-radius:100px;">
+                <img src="<?php
+                            echo $_SESSION['img']; ?>" alt="" height="320" width="320" style="border-radius:100px;">
+                <?php
+
+
+                ?>
             </td>
         </tr>
+        <?php
+        ?>
     </table>
 
+    <?php
 
+
+    ?>
 
 
 
@@ -103,8 +131,7 @@ a {
 
 
     <?php
-    require_once "components/footer.php"
-
+    require_once "components/footer.php";
 
 
 

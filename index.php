@@ -18,7 +18,6 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        background-image: linear-gradient(gray, white, white);
     }
 
     .center {

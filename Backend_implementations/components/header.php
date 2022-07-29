@@ -10,17 +10,9 @@
 </head>
 
 <style>
-table {
-    margin: 2px;
-    border-collapse: separate;
-    border-spacing: 10px 10px;
-
-
-
-}
-
+html,
 body {
-
+    overflow-x: hidden;
     background-image: linear-gradient(grey, #DCC9B9, #D2BEB0)
 }
 
@@ -47,7 +39,7 @@ input {
     opacity: 0.4;
 }
 
-.header-Position {
+.center {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,11 +60,24 @@ input {
 .fa-user-color {
     color: black;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scroller::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scroller {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
 </style>
 
 <body>
 
-    <span class="header-Position">
+    <span class="center">
 
         <img class="icons" src="assets/insta.png" width="25">
         <img class="icons" src="assets/tiktok.png" width="25">
